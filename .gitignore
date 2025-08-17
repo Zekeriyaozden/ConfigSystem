@@ -1,0 +1,8 @@
+# Visual Studio cache ve build dosyaları
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.dbmdl
+*.log

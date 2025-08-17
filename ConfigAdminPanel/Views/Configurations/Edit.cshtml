@@ -1,0 +1,46 @@
+﻿@model ConfigAdminPanel.Models.ConfigItemInput
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-2">
+        <label>ApplicationName</label>
+        <input asp-for="ApplicationName" class="form-control" />
+        <span asp-validation-for="ApplicationName" class="text-danger"></span>
+    </div>
+    <div class="mb-2">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-2">
+        <label>Type</label>
+        <select asp-for="Type" class="form-select">
+            <option>string</option>
+            <option>bool</option>
+            <option>int</option>
+            <option>double</option>
+        </select>
+    </div>
+    <div class="mb-2">
+        <label>Value</label>
+        <input asp-for="Value" class="form-control" />
+        <span asp-validation-for="Value" class="text-danger"></span>
+    </div>
+    <div class="mb-2 form-check">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label class="form-check-label" for="IsActive">IsActive</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
