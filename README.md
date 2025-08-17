@@ -8,12 +8,19 @@ Ayrıca bir **Admin Panel (MVC)** üzerinden bu ayarların **CRUD** işlemleri y
 ##  Proje Yapısı
 
 ├─ Config.Abstractions/ → Ortak interface’ler (IConfigStore, IConfigRepository vb.)
+
 ├─ Config.Data/ → Entity Framework (EF) ile DB erişim katmanı
+
 │ └─ Ef/ → DbContext, EfConfigStore, Repository implementasyonları
+
 ├─ ConfigurationReader/ → Servislerin konfigürasyonu okumasını sağlayan kütüphane
+
 ├─ ServiceA/ → Örnek servis (konfigürasyonu DB’den okur)
+
 ├─ ServiceB/ → Örnek servis (konfigürasyonu DB’den okur)
+
 ├─ ConfigAdminPanel/ → Admin panel (UI, MVC)
+
 └─Init.sql → Veritabanı oluşturma scripti
 
 ##  Gereksinimler
@@ -35,7 +42,9 @@ Proje klasöründe şu komutları çalıştırın:
 
 dotnet build
 Start-Process powershell -ArgumentList 'dotnet run --project ServiceA --urls http://localhost:5000'
+
 Start-Process powershell -ArgumentList 'dotnet run --project ServiceB --urls http://localhost:5001'
+
 Start-Process powershell -ArgumentList 'dotnet run --project ConfigAdminPanel --urls http://localhost:5002'
 
 ### Visual Studio
@@ -52,7 +61,9 @@ F5 ile hepsi aynı anda çalıştırın.
 ## Test
 
 http://localhost:5000/ → ServiceA
+
 http://localhost:5001/ → ServiceB
+
 http://localhost:5002/ → Config Admin Panel
 
 Config değerlerini almak için:
