@@ -67,6 +67,8 @@ http://localhost:5001/ → ServiceB
 http://localhost:5002/ → Config Admin Panel
 
 Config değerlerini almak için:
+
 http://localhost:5000/config/{ConfigName}
+
 http://localhost:5001/config/{ConfigName}
 
