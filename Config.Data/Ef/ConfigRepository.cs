@@ -54,7 +54,6 @@ public sealed class ConfigRepository : IConfigRepository
         return true;
     }
 
-    // Soft delete = IsActive=false
     public async Task<bool> DeleteAsync(int id, CancellationToken ct = default)
     {
         var e = await _db.Configuration.FirstOrDefaultAsync(x => x.Id == id, ct);
